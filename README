@@ -47,10 +47,13 @@ The development server will be running on http://localhost:8000.
 5. The results of the search will be displayed in the results page.
 
 **Deployment**
+
 To deploy the project to production, you can use a variety of deployment methods, such as Heroku or AWS Elastic Beanstalk.
 
 **License**
+
 This project is licensed under the MIT License.
 
 **Contact**
+
 If you have any questions or feedback, please contact me at kokoderrick3@gmail.com
