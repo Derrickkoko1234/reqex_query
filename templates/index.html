@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regex Query Tool</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-4">Regex Query Tool</h1>
+      <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="pattern">Pattern:</label>
+          <input type="text" class="form-control" name="pattern" required />
+        </div>
+        <div class="form-group">
+          <label for="text">Text:</label>
+          <textarea
+            class="form-control"
+            name="text"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="option">Option:</label>
+          <select class="form-control" name="option">
+            <option value="full_match">Full Match</option>
+            <option value="first_match">First Match</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+    <!-- Add Bootstrap JS script link here -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

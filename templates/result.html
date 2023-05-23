@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regex Query Results</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-4">Regex Query Results</h1>
+      <p>Pattern: {{ pattern }}</p>
+      <p>Text: {{ text }}</p>
+      <p>Option: {{ option }}</p>
+      <h2>Matches:</h2>
+      {% if matches %}
+      <ul>
+        {% for match in matches %}
+        <li>{{ match }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No matches found.</p>
+      {% endif %}
+      <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+    </div>
+    <!-- Add Bootstrap JS script link here -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
