@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-
 def home(request):
+    context = {}
     if request.method == 'POST':
         pattern = request.POST.get('pattern')
         text = request.POST.get('text')
@@ -18,13 +18,12 @@ def home(request):
             match = re.search(pattern, text)
             if match:
                 matches.append(match.group())
+                
+        context['pattern'] = pattern
+        context['text'] = text
+        context['option'] = option
+        context['matches'] = matches
 
-        context = {
-            'pattern': pattern,
-            'text': text,
-            'option': option,
-            'matches': matches,
-        }
         return render(request, 'result.html', context)
 
     return render(request, 'index.html')
